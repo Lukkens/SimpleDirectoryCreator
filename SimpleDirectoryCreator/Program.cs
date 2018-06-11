@@ -18,7 +18,7 @@ namespace Simple_Directory_Creator
 
         static void Main(string[] args)
         {
-#if debug
+#if DEBUG
             args = new string[] { "TestList.yaml" };
 #endif
             if (args.Length > 0 && args.Length <= 2 && File.Exists(args[0]))
