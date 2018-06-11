@@ -54,7 +54,10 @@ namespace Simple_Directory_Creator.Core
                     entrySubDirectories = kvp.Key.ToList();
                     subDirectoryCount += kvp.Value;
                 }
-                catch { /* Ignored: The node does not have any child directories anymore */ }
+                catch
+                {
+                    entrySubDirectories = new List<DirInfo>();
+                }
 
                 subDirectoryCount += entrySubDirectories.Count;
                 Entries.Add(new DirInfo(entryName, entrySubDirectories.ToArray()));
