@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple Directory Creator", "Simple Directory Creator\Simple Directory Creator.csproj", "{27A74012-7B7A-4E70-A4A6-D601DC695F20}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDirectoryCreator", "SimpleDirectoryCreator\SimpleDirectoryCreator.csproj", "{27A74012-7B7A-4E70-A4A6-D601DC695F20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {97A72FE6-6CB1-4383-83C1-85C7DC530404}
+		SolutionGuid = {5D3F49FD-80A6-4B75-A333-5DAF39439E54}
 	EndGlobalSection
 EndGlobal
