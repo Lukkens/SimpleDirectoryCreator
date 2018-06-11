@@ -9,6 +9,7 @@ namespace Simple_Directory_Creator
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
