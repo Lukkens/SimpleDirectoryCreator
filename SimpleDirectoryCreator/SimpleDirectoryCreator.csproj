@@ -49,8 +49,8 @@
     <Compile Include="Core\Data\DirInfo.cs" />
     <Compile Include="Core\Data\Enums\DirectoryState.cs" />
     <Compile Include="Core\DirectoryCreator.cs" />
-    <Compile Include="Core\Interpreter.cs" />
     <Compile Include="Core\Output.cs" />
+    <Compile Include="Core\Parser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

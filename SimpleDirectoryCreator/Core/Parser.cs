@@ -8,7 +8,7 @@ using YamlDotNet.RepresentationModel;
 
 namespace Simple_Directory_Creator.Core
 {
-    public static class Interpreter
+    public static class Parser
     {
         private static YamlStream _YamlStream;
 
@@ -41,11 +41,12 @@ namespace Simple_Directory_Creator.Core
             List<DirInfo> Entries = new List<DirInfo>();
             int subDirectoryCount = 0;
             string entryName = "";
-            List<DirInfo> entrySubDirectories = new List<DirInfo>();
+            List<DirInfo> entrySubDirectories;
             foreach (YamlMappingNode item in items)
             {
                 Debug.WriteLine("{0}\t", item.Children[new YamlScalarNode("Name")]);
                 entryName = item.Children[new YamlScalarNode("Name")].ToString();
+                entrySubDirectories = new List<DirInfo>();
 
                 try
                 {
@@ -56,7 +57,7 @@ namespace Simple_Directory_Creator.Core
                 }
                 catch
                 {
-                    entrySubDirectories = new List<DirInfo>();
+                    //entrySubDirectories = new List<DirInfo>();
                 }
 
                 subDirectoryCount += entrySubDirectories.Count;

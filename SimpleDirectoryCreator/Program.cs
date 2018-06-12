@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using ColorConsole;
 using Simple_Directory_Creator.Core;
@@ -32,7 +33,7 @@ namespace Simple_Directory_Creator
                     RootDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 }
                 //Get the directory creation 'instructions'
-                KeyValuePair<DirInfo[], int> instructions = Interpreter.ParseDirectoryInstructions(args[0]);
+                KeyValuePair<DirInfo[], int> instructions = Parser.ParseDirectoryInstructions(args[0]);
 
                 //Create the directories based on the 'instructions'
                 DirectoryCreator.CreateDirectories(instructions.Key);
@@ -46,8 +47,9 @@ namespace Simple_Directory_Creator
             }
             else
             {
-                Console.WriteLine("Usage: {0} [InputFile] {rootDirectory}", (System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + ".exe"));
-                System.Threading.Thread.Sleep(5000);
+                Console.WriteLine("Usage: {0} [InputFile] (rootDirectory)", (System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + ".exe"));
+                Console.WriteLine("Or you can just drag a valid input file onto the executable");
+                System.Threading.Thread.Sleep(2500);
                 return;
             }
         }

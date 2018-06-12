@@ -27,15 +27,33 @@ namespace Simple_Directory_Creator.Core
 
             foreach (DirInfo dir in directories)
             {
-                if (true)
-                {
-                    Directory.CreateDirectory(FormatDir(Root, dir.Name));
-                    Debug.WriteLine(FormatDir(Root, dir.Name));
-                }
+                CreateDirectory(dir, Root);
+
                 CreateDirectories(dir.SubDirectories, dir, Root);
             }
         }
 
+        private static void CreateDirectory(DirInfo directory, string root)
+        {
+            string path = FormatDir(root, directory.Name);
+            if (!Directory.Exists(path))
+            {
+                try
+                {
+                    DirectoryInfo info = Directory.CreateDirectory(path);
+                    directory.DirState = DirectoryState.CREATED;
+                }
+                catch
+                {
+                    directory.DirState = DirectoryState.FAILED;
+                }
+                Debug.WriteLine(path);
+            }
+            else
+            {
+                directory.DirState = DirectoryState.ALREADYEXISTS;
+            }
+        }
         
         private static string FormatDir(string dir1, string dir2)
         {

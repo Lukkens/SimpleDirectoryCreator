@@ -19,7 +19,8 @@ namespace Simple_Directory_Creator.Core
                 Console.Write("├─");
                 indent += "│ ";
             }
-            Console.WriteLine(root.Name);
+            Console.Write(root.Name + "             ");
+            root.WriteStatus();
 
             for (int i = 0; i < root.SubDirectories.Length; i++)
                 PrintTree(root.SubDirectories[i], indent, i == root.SubDirectories.Length - 1);

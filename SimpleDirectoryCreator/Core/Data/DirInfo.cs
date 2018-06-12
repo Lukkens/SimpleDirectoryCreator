@@ -4,7 +4,8 @@ namespace Simple_Directory_Creator.Core.Data
 {
     public class DirInfo
     {
-        public DirectoryState DirState;
+        public DirectoryState DirState = DirectoryState.PENDING;
+
         public string Name;
         public DirInfo[] SubDirectories;
 
@@ -19,7 +20,20 @@ namespace Simple_Directory_Creator.Core.Data
             switch (DirState)
             {
                 case DirectoryState.CREATED:
-                    Program.ColorConsole.WriteLine("[Created]", ConsoleColor.Green);
+                    Console.Write("[");
+                    Program.ColorConsole.Write("Created", ConsoleColor.Green);
+                    Console.WriteLine("]");
+                    break;
+                case DirectoryState.PENDING:
+                case DirectoryState.FAILED:
+                    Console.Write("[");
+                    Program.ColorConsole.Write("Failed", ConsoleColor.Red);
+                    Console.WriteLine("]");
+                    break;
+                case DirectoryState.ALREADYEXISTS:
+                    Console.Write("[");
+                    Program.ColorConsole.Write("Already Exists", ConsoleColor.Yellow);
+                    Console.WriteLine("]");
                     break;
             }
         }

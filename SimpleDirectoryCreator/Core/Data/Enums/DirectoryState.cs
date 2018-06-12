@@ -2,6 +2,7 @@
 {
     public enum DirectoryState
     {
+        PENDING,
         CREATED,
         FAILED,
         ALREADYEXISTS,
